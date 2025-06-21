@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Scanner Buddy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #000000;
+            color: #FFD700;
+            line-height: 1.6;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #FFD700;
+            margin-bottom: 12px;
+        }
+
+        .header .app-name {
+            font-size: 22px;
+            font-weight: 600;
+            color: #FFD700;
+            opacity: 0.8;
+        }
+
+        .last-updated {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.1);
+        }
+
+        .section {
+            background: rgba(128, 128, 128, 0.1);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .section h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #FFD700;
+            margin-bottom: 16px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 8px;
+        }
+
+        .section h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #FFD700;
+            margin: 20px 0 12px 0;
+        }
+
+        .section p {
+            font-size: 15px;
+            color: rgba(255, 215, 0, 0.8);
+            margin-bottom: 16px;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .section ul li {
+            font-size: 15px;
+            color: rgba(255, 215, 0, 0.8);
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .section ul li::before {
+            content: "•";
+            color: #FFD700;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 69, 58, 0.1), rgba(255, 69, 58, 0.05));
+            border: 2px solid rgba(255, 69, 58, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning-box h3 {
+            color: #FF453A;
+        }
+
+        .warning-box p, .warning-box li {
+            color: rgba(255, 69, 58, 0.8);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(255, 215, 0, 0.02));
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .feature-card h4 {
+            color: #FFD700;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: rgba(255, 215, 0, 0.7);
+            margin: 0;
+        }
+
+        .subscription-box {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.08));
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-box h3 {
+            color: #FFD700;
+            margin-bottom: 12px;
+        }
+
+        .contact-email {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 20px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 8px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .contact-email:hover {
+            background: rgba(255, 215, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .footer p {
+            font-size: 12px;
+            color: rgba(255, 215, 0, 0.7);
+        }
+
+        .legal-notice {
+            background: rgba(128, 128, 128, 0.05);
+            border-left: 4px solid #FFD700;
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Terms of Service</h1>
+            <div class="app-name">Scanner Buddy</div>
+        </div>
+
+        <div class="last-updated">
+            <strong>Last Updated:</strong> December 21, 2024
+        </div>
+
+        <div class="section">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By downloading, installing, or using Scanner Buddy (the "App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
+            
+            <div class="legal-notice">
+                <p><strong>Legal Agreement:</strong> These Terms constitute a legally binding agreement between you and Scanner Buddy regarding your use of the App and its services.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. Description of Service</h2>
+            <p>Scanner Buddy is a professional document scanning and OCR (Optical Character Recognition) application for iOS devices that provides the following services:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>📄 Document Scanning</h4>
+                    <p>High-quality document scanning using your device's camera with automatic edge detection and enhancement.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔍 OCR Processing</h4>
+                    <p>Advanced text recognition supporting 13+ languages with high accuracy and small text detection.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📝 Digital Signatures</h4>
+                    <p>Create and apply digital signatures to your documents with drag-and-drop functionality.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📁 Organization</h4>
+                    <p>Organize documents into custom categories and manage your document library efficiently.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔒 Security</h4>
+                    <p>Secure your app with 4-digit PIN protection and local encrypted storage.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📤 Export Options</h4>
+                    <p>Export documents as PDF files with native iOS sharing capabilities.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. User Accounts and Eligibility</h2>
+            
+            <h3>3.1 Eligibility</h3>
+            <ul>
+                <li>You must be at least 13 years old to use the App</li>
+                <li>You must have a valid Apple ID to download and use the App</li>
+                <li>You must comply with all applicable local, state, national, and international laws</li>
+            </ul>
+            
+            <h3>3.2 Account Security</h3>
+            <ul>
+                <li>You are responsible for maintaining the security of your device and Apple ID</li>
+                <li>You are responsible for all activities that occur under your account</li>
+                <li>You must notify us immediately of any unauthorized use of your account</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. Subscription Services and Payments</h2>
+            
+            <div class="subscription-box">
+                <h3>4.1 Free Trial</h3>
+                <p>Scanner Buddy offers a 3-day free trial for premium features. The trial is automatically activated when you first use the app and is limited to one trial per Apple ID.</p>
+                
+                <h3>4.2 Premium Subscription</h3>
+                <p>After the trial period, continued access to premium features requires a paid subscription available in monthly billing cycles.</p>
+                
+                <h3>4.3 Free Version Limitations</h3>
+                <ul>
+                    <li>Limited to 3 document scans per day</li>
+                    <li>No access to signature creation features</li>
+                    <li>No access to OCR (text recognition) features</li>
+                    <li>No app lock functionality</li>
+                </ul>
+            </div>
+            
+            <h3>4.4 Payment Terms</h3>
+            <ul>
+                <li>Subscriptions are processed through Apple's App Store</li>
+                <li>Payment will be charged to your Apple ID account</li>
+                <li>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period</li>
+                <li>Refunds are handled according to Apple's App Store refund policy</li>
+            </ul>
+            
+            <h3>4.5 Price Changes</h3>
+            <p>We reserve the right to modify subscription prices. Price changes will not affect existing subscriptions until renewal, and you will be notified in advance of any changes.</p>
+        </div>
+
+        <div class="section">
+            <h2>5. Acceptable Use Policy</h2>
+            
+            <h3>5.1 Permitted Uses</h3>
+            <ul>
+                <li>Scan and digitize your own documents and papers</li>
+                <li>Create digital archives of personal or business documents</li>
+                <li>Extract text from documents for legitimate purposes</li>
+                <li>Create and apply digital signatures to your documents</li>
+                <li>Export and share documents you have scanned or created</li>
+            </ul>
+            
+            <div class="warning-box">
+                <h3>5.2 Prohibited Uses</h3>
+                <p>You may NOT use Scanner Buddy for:</p>
+                <ul>
+                    <li>Scanning copyrighted materials without permission</li>
+                    <li>Creating fraudulent documents or signatures</li>
+                    <li>Violating any local, state, national, or international laws</li>
+                    <li>Scanning sensitive documents belonging to others without authorization</li>
+                    <li>Reverse engineering, decompiling, or attempting to extract source code</li>
+                    <li>Circumventing usage limits or security features</li>
+                    <li>Using the app for any commercial purposes beyond personal/business document management</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>6. Intellectual Property Rights</h2>
+            
+            <h3>6.1 App Ownership</h3>
+            <p>Scanner Buddy, including all software, features, content, and technology, is owned by us and is protected by copyright, trademark, and other intellectual property laws.</p>
+            
+            <h3>6.2 Your Content</h3>
+            <ul>
+                <li>You retain all rights to documents and content you create using the App</li>
+                <li>Your scanned documents, signatures, and created content remain your property</li>
+                <li>We do not claim ownership over your personal documents or data</li>
+            </ul>
+            
+            <h3>6.3 Limited License</h3>
+            <p>We grant you a limited, non-exclusive, non-transferable license to use the App for personal or business purposes in accordance with these Terms.</p>
+        </div>
+
+        <div class="section">
+            <h2>7. Privacy and Data Protection</h2>
+            
+            <div class="highlight-box">
+                <h3>Local Data Processing</h3>
+                <p>Scanner Buddy is designed with privacy-first principles:</p>
+                <ul>
+                    <li><strong>Local Storage:</strong> All your documents are stored locally on your device</li>
+                    <li><strong>No Cloud Upload:</strong> Your documents are never uploaded to external servers</li>
+                    <li><strong>Encrypted Security:</strong> Sensitive data is encrypted using iOS security features</li>
+                    <li><strong>Private OCR:</strong> Text recognition is performed entirely on your device</li>
+                </ul>
+            </div>
+            
+            <p>For detailed information about how we handle your data, please review our <a href="privacy-policy.html" style="color: #FFD700; text-decoration: underline;">Privacy Policy</a>.</p>
+        </div>
+
+        <div class="section">
+            <h2>8. Disclaimers and Limitations</h2>
+            
+            <h3>8.1 Service Availability</h3>
+            <p>The App is provided "as is" and "as available." We do not guarantee that the App will be available at all times or that it will function without interruption or errors.</p>
+            
+            <h3>8.2 OCR Accuracy</h3>
+            <p>While we strive for high OCR accuracy, we cannot guarantee 100% accuracy in text recognition. Users should verify important text extractions manually.</p>
+            
+            <h3>8.3 Device Compatibility</h3>
+            <p>The App requires iOS devices with camera functionality. Performance may vary based on device capabilities and iOS version.</p>
+            
+            <div class="warning-box">
+                <h3>8.4 Limitation of Liability</h3>
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF DATA, REVENUE, OR PROFITS.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>9. Data Backup and Loss</h2>
+            
+            <div class="warning-box">
+                <h3>Important: Data Backup Responsibility</h3>
+                <p>Since all data is stored locally on your device:</p>
+                <ul>
+                    <li>You are responsible for backing up your important documents</li>
+                    <li>We are not responsible for data loss due to device failure, deletion, or other issues</li>
+                    <li>Uninstalling the app will permanently delete all stored documents</li>
+                    <li>We recommend regularly exporting important documents</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>10. Third-Party Services</h2>
+            
+            <h3>10.1 Apple App Store</h3>
+            <ul>
+                <li>App distribution and payment processing through Apple's App Store</li>
+                <li>Subject to Apple's Terms of Service and policies</li>
+                <li>Refunds and subscription management through Apple's systems</li>
+            </ul>
+            
+            <h3>10.2 RevenueCat</h3>
+            <ul>
+                <li>Subscription management and analytics through RevenueCat</li>
+                <li>Subject to RevenueCat's Terms of Service and Privacy Policy</li>
+                <li>Cross-platform subscription management capabilities</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>11. Termination</h2>
+            
+            <h3>11.1 Termination by You</h3>
+            <p>You may stop using the App at any time by:</p>
+            <ul>
+                <li>Uninstalling the App from your device</li>
+                <li>Canceling your subscription through your Apple ID account settings</li>
+            </ul>
+            
+            <h3>11.2 Termination by Us</h3>
+            <p>We may terminate or suspend your access to the App if you violate these Terms, engage in prohibited activities, or for other legitimate business reasons.</p>
+            
+            <h3>11.3 Effect of Termination</h3>
+            <p>Upon termination, your right to use the App ceases immediately. All provisions of these Terms that should survive termination shall survive, including ownership provisions and liability limitations.</p>
+        </div>
+
+        <div class="section">
+            <h2>12. Updates and Changes</h2>
+            
+            <h3>12.1 App Updates</h3>
+            <ul>
+                <li>We may release updates to improve functionality, security, and user experience</li>
+                <li>Some updates may be required for continued use of the App</li>
+                <li>New features may be subject to additional terms or subscription requirements</li>
+            </ul>
+            
+            <h3>12.2 Terms Changes</h3>
+            <p>We may modify these Terms at any time. We will notify users of material changes through:</p>
+            <ul>
+                <li>In-app notifications</li>
+                <li>Updated Terms accessible within the App</li>
+                <li>Email notifications (if applicable)</li>
+            </ul>
+            <p>Continued use of the App after changes constitutes acceptance of the new Terms.</p>
+        </div>
+
+        <div class="section">
+            <h2>13. Governing Law and Disputes</h2>
+            
+            <h3>13.1 Governing Law</h3>
+            <p>These Terms are governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to conflict of law principles.</p>
+            
+            <h3>13.2 Dispute Resolution</h3>
+            <p>Any disputes arising from these Terms or your use of the App shall be resolved through:</p>
+            <ul>
+                <li>Good faith negotiations between the parties</li>
+                <li>Binding arbitration if direct negotiations fail</li>
+                <li>Courts of competent jurisdiction in [Your Jurisdiction] as a last resort</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>14. Miscellaneous</h2>
+            
+            <h3>14.1 Entire Agreement</h3>
+            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and us regarding the App.</p>
+            
+            <h3>14.2 Severability</h3>
+            <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in full force and effect.</p>
+            
+            <h3>14.3 No Waiver</h3>
+            <p>Our failure to enforce any provision of these Terms does not constitute a waiver of that provision or any other provision.</p>
+            
+            <h3>14.4 Assignment</h3>
+            <p>We may assign these Terms or any rights hereunder without your consent. You may not assign these Terms without our prior written consent.</p>
+        </div>
+
+        <div class="contact-box">
+            <h3>Contact Information</h3>
+            <p>If you have any questions about these Terms of Service, please contact us:</p>
+            <a href="mailto:support@promptpixels.app" class="contact-email">support@promptpixels.app</a>
+            <p style="margin-top: 16px; font-size: 14px; color: rgba(255, 215, 0, 0.7);">
+                We typically respond to inquiries within 24-48 hours.
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Scanner Buddy. All rights reserved.</p>
+            <p>These Terms of Service are effective as of December 21, 2024.</p>
+            <p style="margin-top: 8px;">
+                <a href="privacy-policy.html" style="color: rgba(255, 215, 0, 0.7); text-decoration: none;">Privacy Policy</a> | 
+                <a href="mailto:support@promptpixels.app" style="color: rgba(255, 215, 0, 0.7); text-decoration: none;">Support</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
